@@ -13,6 +13,7 @@ License:	GPL
 Group:		Sound
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	libalsa-devel jackit-devel fltk-devel libsndfile-devel
+BuildRequires:	alsa-utils
 
 %description
 Horgand is a jack capable organ client with presets and some effects
