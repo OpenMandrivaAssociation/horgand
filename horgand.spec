@@ -1,6 +1,6 @@
 %define name	horgand
-%define version	1.07
-%define release %mkrel 4
+%define version	1.11
+%define release %mkrel 1
 
 Name: 	 	%{name}
 Summary: 	FM organ synthesizer
@@ -29,19 +29,14 @@ perl -p -i -e "s|-O6|$RPM_OPT_FLAGS||g" Makefile
 
 %install
 rm -rf $RPM_BUILD_ROOT
-mkdir -p $RPM_BUILD_ROOT/%_mandir/man1
-cp man/%name.1 $RPM_BUILD_ROOT/%_mandir/man1
-bzip2 $RPM_BUILD_ROOT/%_mandir/man1/%name.1
+#mkdir -p $RPM_BUILD_ROOT/%_mandir/man1
+#cp man/%name.1 $RPM_BUILD_ROOT/%_mandir/man1
+#bzip2 $RPM_BUILD_ROOT/%_mandir/man1/%name.1
 mkdir -p $RPM_BUILD_ROOT/%_bindir
 %makeinstall_std PREFIX=%_prefix
 rm -fr $RPM_BUILD_ROOT/%_docdir/%name
 
 #menu
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}): command="%{name}" icon="sound_section.png" needs="x11" title="Horgand" longtitle="FM Organ Synthesizer" section="Multimedia/Sound"\
-xdg="true"
-EOF
 
 mkdir -p $RPM_BUILD_ROOT%{_datadir}/applications
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -52,7 +47,7 @@ Exec=%{_bindir}/%{name}
 Icon=sound_section
 Terminal=false
 Type=Application
-Categories=X-MandrivaLinux-Multimedia-Sound;AudioVideo;Sequencer;
+Categories=AudioVideo;Sequencer;
 Encoding=UTF-8
 EOF
 
@@ -72,5 +67,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/%name
 %{_datadir}/%name
 %{_mandir}/man1/*
-%{_menudir}/%name
 %{_datadir}/applications/mandriva-%{name}.desktop
+
