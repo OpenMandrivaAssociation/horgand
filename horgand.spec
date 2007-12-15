@@ -1,5 +1,5 @@
 %define name	horgand
-%define version	1.11
+%define version	1.14
 %define release %mkrel 1
 
 Name: 	 	%{name}
@@ -30,9 +30,6 @@ perl -p -i -e "s|-O6|$RPM_OPT_FLAGS||g" Makefile
 
 %install
 rm -rf $RPM_BUILD_ROOT
-#mkdir -p $RPM_BUILD_ROOT/%_mandir/man1
-#cp man/%name.1 $RPM_BUILD_ROOT/%_mandir/man1
-#bzip2 $RPM_BUILD_ROOT/%_mandir/man1/%name.1
 mkdir -p $RPM_BUILD_ROOT/%_bindir
 %makeinstall_std PREFIX=%_prefix
 rm -fr $RPM_BUILD_ROOT/%_docdir/%name
