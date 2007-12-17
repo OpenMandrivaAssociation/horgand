@@ -11,7 +11,6 @@ Source:		%{name}-%{version}.tar.bz2
 URL:		http://horgand.berlios.de
 License:	GPL
 Group:		Sound
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	libalsa-devel jackit-devel fltk-devel libsndfile-devel
 BuildRequires:	alsa-utils xpm-devel
 
