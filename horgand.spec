@@ -1,13 +1,13 @@
 %define name	horgand
 %define version	1.14
-%define release %mkrel 3
+%define release %mkrel 4
 
 Name: 	 	%{name}
 Summary: 	FM organ synthesizer
 Version: 	%{version}
 Release: 	%{release}
-
 Source:		%{name}-%{version}.tar.bz2
+Patch0:		horgand-1.14-adopt-fltk.patch
 URL:		http://horgand.berlios.de
 License:	GPL
 Group:		Sound
@@ -22,6 +22,7 @@ You can change the frecuency of all the drawars and add some special effects.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %configure2_5x
@@ -46,9 +47,7 @@ Icon=sound_section
 Terminal=false
 Type=Application
 Categories=AudioVideo;Sequencer;
-Encoding=UTF-8
 EOF
-
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -70,4 +69,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/%name
 %{_mandir}/man1/*
 %{_datadir}/applications/mandriva-%{name}.desktop
-
