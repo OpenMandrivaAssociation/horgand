@@ -24,7 +24,7 @@ You can change the frecuency of all the drawars and add some special effects.
 %setup -q
 
 %build
-%configure
+%configure2_5x
 perl -p -i -e "s|-O6|$RPM_OPT_FLAGS||g" Makefile
 %make
 
