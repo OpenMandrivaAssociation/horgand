@@ -1,6 +1,6 @@
 %define name	horgand
 %define version	1.14
-%define release %mkrel 5
+%define release %mkrel 6
 
 Name: 	 	%{name}
 Summary: 	FM organ synthesizer
