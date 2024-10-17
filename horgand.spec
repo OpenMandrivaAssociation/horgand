@@ -8,7 +8,7 @@ Version: 	%{version}
 Release: 	%{release}
 Source0:		%{name}-%{version}.tar.bz2
 Patch0:		horgand-1.14-adopt-fltk.patch
-URL:		http://horgand.berlios.de
+URL:		https://horgand.berlios.de
 License:	GPL
 Group:		Sound
 BuildRequires:	libalsa-devel jackit-devel fltk-devel pkgconfig(sndfile)
